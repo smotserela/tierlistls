@@ -1,0 +1,1064 @@
+Ik zie dat je de tierlist wilt aanpassen met nieuwe spelers en tiers. Hier is hoe je dit kunt doen en hoe je een GitHub-pagina kunt maken:
+
+### Aanpassingen voor de Tierlist:
+
+1. **Vervang de players array in de JavaScript code** met deze nieuwe gegevens:
+
+```javascript
+const players = [
+    // S Tier
+    { name: "Hidspot", rank: 1, tier: "s", updated: "14-8-2025" },
+    { name: "banzy_", rank: 2, tier: "s", updated: "14-8-2025" },
+    { name: "Hlppo", rank: 3, tier: "s", updated: "14-8-2025" },
+    
+    // A Tier
+    { name: "MimiBoy15", rank: 4, tier: "a", updated: "14-8-2025" },
+    { name: "crxnsio", rank: 5, tier: "a", updated: "14-8-2025" },
+    { name: "Druxiz", rank: 6, tier: "a", updated: "14-8-2025" },
+    
+    // B Tier
+    { name: "Doevie", rank: 7, tier: "b", updated: "14-8-2025" },
+    { name: "ToonDrone", rank: 8, tier: "b", updated: "14-8-2025" },
+    { name: "Kuspim", rank: 9, tier: "b", updated: "14-8-2025" },
+    
+    // C Tier
+    { name: "Broodkaas", rank: 10, tier: "c", updated: "14-8-2025" },
+    { name: "Mettix", rank: 11, tier: "c", updated: "14-8-2025" },
+    { name: "BADPAKonTT", rank: 12, tier: "c", updated: "14-8-2025" },
+    { name: "zaylz", rank: 13, tier: "c", updated: "14-8-2025" },
+    { name: "sm75851", rank: 14, tier: "c", updated: "14-8-2025" },
+    { name: "Gamer_xd_pro_200", rank: 15, tier: "c", updated: "14-8-2025" },
+    { name: "llynix", rank: 16, tier: "c", updated: "14-8-2025" },
+    
+    // D Tier
+    { name: "ItzTrazyyy", rank: 17, tier: "d", updated: "14-8-2025" },
+    { name: "mexz", rank: 18, tier: "d", updated: "14-8-2025" },
+    { name: "oEntityz", rank: 19, tier: "d", updated: "14-8-2025" },
+    { name: "Skibidi_diogo", rank: 20, tier: "d", updated: "14-8-2025" },
+    
+    // F Tier
+    { name: "Ems3y", rank: 21, tier: "f", updated: "14-8-2025" },
+    { name: "Chickenfighter50", rank: 22, tier: "f", updated: "14-8-2025" },
+    
+    // Unranked
+    { name: "Fla3m", rank: 23, tier: "unranked", updated: "14-8-2025" },
+    { name: "Jurreflorisrobi", rank: 24, tier: "unranked", updated: "14-8-2025" },
+    { name: "Zenderlink", rank: 25, tier: "unranked", updated: "14-8-2025" },
+    // ... voeg alle andere unranked spelers toe ...
+    { name: "Wickedfire75", rank: 60, tier: "unranked", updated: "14-8-2025" },
+    // ... rest van de unranked spelers ...
+];
+```
+
+2. **Verwijder de oude statistieken en beschrijvingen** aangezien je die niet meer wilt.
+
+### GitHub Pages Hosting Instructies:
+
+1. **Maak een GitHub account** als je die nog niet hebt: [github.com](https://github.com)
+
+2. **Maak een nieuw repository**:
+   - Klik op "+" > "New repository"
+   - Geef het een naam (bijv. "dia-smp-tierlist")
+   - Zet op "Public"
+   - Vink "Add a README file" aan
+   - Klik "Create repository"
+
+3. **Upload je bestanden**:
+   - Maak een `index.html` bestand met alle HTML/CSS/JS code
+   - Sleep het bestand naar je repository of gebruik GitHub Desktop
+
+4. **Activeer GitHub Pages**:
+   - Ga naar "Settings" > "Pages"
+   - Bij "Source" kies "Deploy from a branch"
+   - Bij "Branch" kies "main" en "/ (root)"
+   - Klik "Save"
+
+5. **Je site is live** op:  
+   `https://[jouw-github-username].github.io/[repository-naam]/`
+
+### Alternatief - Complete Code:
+
+Hier is de volledige aangepaste code voor je tierlist:
+
+```html
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSTiers - DIA SMP Tierlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --black: #0d0d0d;
+            --dark-gray: #1a1a1a;
+            --red: #e60000;
+            --light-red: #ff3333;
+            --text: #f0f0f0;
+            --gold: #FFD700;
+            --s-tier: #ff3333;
+            --a-tier: #ff9900;
+            --b-tier: #ffff00;
+            --c-tier: #00cc00;
+            --d-tier: #0080ff;
+            --f-tier: #800080;
+            --unranked: #aaaaaa;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(230, 0, 0, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(230, 0, 0, 0.05) 0%, transparent 20%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--dark-gray);
+            border-bottom: 3px solid var(--red);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--red);
+            font-size: 2.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            background: linear-gradient(to right, var(--red), #ff5e5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--red);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--red);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.active {
+            color: var(--red);
+        }
+
+        nav a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.9)), 
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070') no-repeat center center;
+            background-size: cover;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(230, 0, 0, 0.1), transparent);
+            z-index: 0;
+        }
+
+        .hero-content {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h2 span {
+            color: var(--red);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            color: #ccc;
+        }
+
+        .last-updated {
+            background-color: rgba(230, 0, 0, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(230, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text);
+            border: 2px solid var(--red);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--red);
+        }
+
+        /* Controls */
+        .controls {
+            background-color: var(--dark-gray);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 80px;
+            z-index: 90;
+            border-bottom: 2px solid var(--red);
+        }
+
+        .controls-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem 1.2rem 0.8rem 3rem;
+            background-color: #333;
+            color: white;
+            border: 2px solid #555;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--red);
+            box-shadow: 0 0 10px rgba(230, 0, 0, 0.3);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        .tier-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tier-filter {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .tier-filter.active {
+            border-color: white;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .tier-filter:hover:not(.active) {
+            transform: translateY(-2px);
+        }
+
+        /* Tierlist Section */
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background-color: var(--red);
+            border-radius: 2px;
+        }
+
+        /* Nieuwe tierlist structuur - één speler per rij */
+        .tier {
+            background-color: var(--dark-gray);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border-left: 5px solid var(--s-tier);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .tier-header {
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tier-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .tier-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .tier-count {
+            background-color: #333;
+            color: #aaa;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .tier-players {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+        }
+
+        .player-row {
+            display: flex;
+            align-items: center;
+            background-color: rgba(40, 40, 40, 0.8);
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 0.8rem;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text);
+            animation: fadeIn 0.5s ease-out;
+            cursor: pointer;
+        }
+
+        .player-row:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
+            border-color: var(--red);
+        }
+
+        .player-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #555;
+            margin-right: 1rem;
+        }
+
+        .player-info {
+            flex: 1;
+        }
+
+        .player-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .player-info .player-rank {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .player-tier {
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        /* Tier-specific colors */
+        .tier-s { border-left-color: var(--s-tier); }
+        .tier-s .tier-name { color: var(--s-tier); }
+        .tier-s .player-tier { background-color: rgba(255, 51, 51, 0.2); color: var(--s-tier); }
+
+        .tier-a { border-left-color: var(--a-tier); }
+        .tier-a .tier-name { color: var(--a-tier); }
+        .tier-a .player-tier { background-color: rgba(255, 153, 0, 0.2); color: var(--a-tier); }
+
+        .tier-b { border-left-color: var(--b-tier); }
+        .tier-b .tier-name { color: var(--b-tier); }
+        .tier-b .player-tier { background-color: rgba(255, 255, 0, 0.2); color: var(--b-tier); }
+
+        .tier-c { border-left-color: var(--c-tier); }
+        .tier-c .tier-name { color: var(--c-tier); }
+        .tier-c .player-tier { background-color: rgba(0, 204, 0, 0.2); color: var(--c-tier); }
+
+        .tier-d { border-left-color: var(--d-tier); }
+        .tier-d .tier-name { color: var(--d-tier); }
+        .tier-d .player-tier { background-color: rgba(0, 128, 255, 0.2); color: var(--d-tier); }
+
+        .tier-f { border-left-color: var(--f-tier); }
+        .tier-f .tier-name { color: var(--f-tier); }
+        .tier-f .player-tier { background-color: rgba(128, 0, 128, 0.2); color: var(--f-tier); }
+
+        .tier-unranked { border-left-color: var(--unranked); }
+        .tier-unranked .tier-name { color: var(--unranked); }
+        .tier-unranked .player-tier { background-color: rgba(170, 170, 170, 0.2); color: var(--unranked); }
+
+        /* Player Profile */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 0;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-card {
+            background-color: var(--dark-gray);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--red);
+        }
+
+        .profile-top {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--red);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-tier {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-stats {
+            display: none; /* Verberg stats standaard */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background-color: rgba(40, 40, 40, 0.8);
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        .player-description {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+        }
+
+        .player-description p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Rules Section */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .rule-category {
+            background-color: rgba(40, 40, 40, 0.8);
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .rule-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(230, 0, 0, 0.4);
+            border-color: var(--red);
+        }
+
+        .rule-category h3 {
+            color: var(--red);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .rule-category ul {
+            padding-left: 1.5rem;
+        }
+
+        .rule-category li {
+            margin-bottom: 0.8rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .rule-category li strong {
+            color: var(--red);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            border-top: 3px solid var(--red);
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            color: var(--red);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--red);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 0.8rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .controls-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .tier-filters {
+                justify-content: center;
+            }
+            
+            .profile-top {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .rule-category {
+                padding: 1rem;
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 99;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo" onclick="showPage('home')">
+                    <i class="fas fa-crown"></i>
+                    <h1>LSTiers</h1>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active" onclick="showPage('home')"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#" onclick="showPage('rules')"><i class="fas fa-book"></i> Regels</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pagina's container -->
+    <div class="container">
+        <!-- Home Pagina (Tierlist) -->
+        <div id="home-page" class="page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h2>DIA SMP <span>Officiële Tierlist</span></h2>
+                            <div class="last-updated">
+                                <i class="fas fa-sync-alt"></i> Laatst bijgewerkt: 14 augustus 2025
+                            </div>
+                            <p>De ultieme ranking voor DIA SMP spelers. Bekijk de tierlist met alle spelers gesorteerd op hun prestaties, strategie en naleving van de serverregels.</p>
+                            
+                            <div class="btn-container">
+                                <a href="#tierlist" class="btn btn-primary">
+                                    <i class="fas fa-ranking-star"></i> Bekijk Tierlist
+                                </a>
+                                <a href="#" class="btn btn-secondary" onclick="showPage('rules')">
+                                    <i class="fas fa-book"></i> Server Regels
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Controls -->
+            <div class="controls">
+                <div class="container">
+                    <div class="controls-container">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="Zoek een speler...">
+                        </div>
+                        
+                        <div class="tier-filters">
+                            <div class="tier-filter active" data-tier="all">Alle Tiers</div>
+                            <div class="tier-filter" data-tier="s">S Tier</div>
+                            <div class="tier-filter" data-tier="a">A Tier</div>
+                            <div class="tier-filter" data-tier="b">B Tier</div>
+                            <div class="tier-filter" data-tier="c">C Tier</div>
+                            <div class="tier-filter" data-tier="d">D Tier</div>
+                            <div class="tier-filter" data-tier="f">F Tier</div>
+                            <div class="tier-filter" data-tier="unranked">Unranked</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tierlist Section -->
+            <section class="section" id="tierlist">
+                <div class="section-header">
+                    <h2>DIA SMP Tierlist</h2>
+                    <p>Ranking gebaseerd op prestaties, strategie en naleving van de serverregels</p>
+                </div>
+                
+                <div class="tierlist-container">
+                    <!-- S Tier -->
+                    <div class="tier tier-s" data-tier="s">
+                        <div class="tier-header">
+                            <div class="tier-title">
+                                <div class="tier-name">S Tier - Elite PvP'ers</div>
+                                <div class="tier-count">3 spelers</div>
+                            </div>
+                        </div>
+                        <div class="tier-players">
+                            <!-- S Tier spelers hier -->
+                        </div>
+                    </div>
+                    
+                    <!-- A Tier -->
+                    <div class="tier tier-a" data-tier="a">
+                        <div class="tier-header">
+                            <div class="tier-title">
+                                <div class="tier-name">A Tier - Geavanceerde spelers</div>
+                                <div class="tier-count">3 spelers</div>
+                            </div>
+                        </div>
+                        <div class="tier-players">
+                            <!-- A Tier spelers hier -->
+                        </div>
+                    </div>
+                    
+                    <!-- B Tier -->
+                    <div class="tier tier-b" data-tier="b">
+                        <div class="tier-header">
+                            <div class="tier-title">
+                                <div class="tier-name">B Tier - Competente spelers</div>
+                                <div class="tier-count">3 spelers</div>
+                            </div>
+                        </div>
+                        <div class="tier-players">
+                            <!-- B Tier spelers hier -->
+                        </div>
+                    </div>
+                    
+                    <!-- C Tier -->
+                    <div class="tier tier-c" data-tier="c">
+                        <div class="tier-header">
+                            <div class="tier-title">
+                                <div class="tier-name">C Tier - Gemiddelde spelers</div>
+                                <div class="tier-count">7 spelers</div>
+                            </div>
+                        </div>
+                        <div class="tier-players">
+                            <!-- C Tier spelers hier -->
+                        </div>
+                    </div>
+                    
+                    <!-- D Tier -->
+                    <div class="tier tier-d" data-tier="d">
+                        <div class="tier-header">
+                            <div class="tier-title">
+                                <div class="tier-name">D Tier - Beginnende spelers</div>
+                                <div class="tier-count">4 spelers</div>
+                            </div>
+                        </div>
+                        <div class="tier-players">
+                            <!-- D Tier spelers hier -->
+                        </div>
+                    </div>
+                    
+                    <!-- F Tier -->
+                    <div class="tier tier-f" data-tier="f">
+                        <div class="tier-header">
+                            <div class="tier-title">
+                                <div class="tier-name">F Tier - Nieuwe spelers</div>
+                                <div class="tier-count">2 spelers</div>
+                            </div>
+                        </div>
+                        <div class="tier-players">
+                            <!-- F Tier spelers hier -->
+                        </div>
+                    </div>
+                    
+                    <!-- Unranked Tier -->
+                    <div class="tier tier-unranked" data-tier="unranked">
+                        <div class="tier-header">
+                            <div class="tier-title">
+                                <div class="tier-name">Unranked</div>
+                                <div class="tier-count">72 spelers</div>
+                            </div>
+                        </div>
+                        <div class="tier-players">
+                            <!-- Unranked spelers hier -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stats Section -->
+                <div class="stats-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
+                    <div class="stat-card">
+                        <div class="stat-value">95</div>
+                        <div class="stat-label">Totaal Spelers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">22</div>
+                        <div class="stat-label">Gerankte Spelers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">S Tier Spelers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">72</div>
+                        <div class="stat-label">Unranked Spelers</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Rules Pagina -->
